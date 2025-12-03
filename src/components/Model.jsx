@@ -65,7 +65,7 @@ const Model = () => {
             <div className="w-full h-full relative overflow-hidden">
               <ModelView index={1} groupRef={small} gsapType="view1" controlRef={cameraControlSmall} setRotationState={setSmallRotation} item={model} size={size} />
 
-              {/* <ModelView index={2} groupRef={large} gsapType="view2" controlRef={cameraControlLarge} setRotationState={setLargeRotation} item={model} size={size} /> */}
+              <ModelView index={2} groupRef={large} gsapType="view2" controlRef={cameraControlLarge} setRotationState={setLargeRotation} item={model} size={size} />
 
               <Canvas className="w-full h-full" style={{ position: "fixed", top: 0, bottom: 0, left: 0, right: 0, overflow: "hidden" }} eventSource={document.getElementById("root")}>
                 <View.Port />
@@ -83,13 +83,13 @@ const Model = () => {
                 ))}
               </ul>
 
-              {/* <button className="size-btn-container">
+              <button className="size-btn-container">
                 {sizes.map(({ label, value }) => (
                   <span key={label} className="size-btn cursor-pointer" style={{ backgroundColor: size === value ? "white" : "transparent", color: size === value ? "black" : "white" }} onClick={() => setSize(value)}>
                     {label}
                   </span>
                 ))}
-              </button> */}
+              </button>
             </div>
           </div>
         </div>
