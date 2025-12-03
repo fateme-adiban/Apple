@@ -7,7 +7,7 @@ import Loader from "./Loader"
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
   return (
-    <View index={index} id={gsapType} className={`w-full h-full absolute ${index === 2 ? "-right-full" : ""}`}>
+    <View index={index} id={gsapType} className={`overflow-hidden w-full h-full absolute ${index === 2 ? "-right-full" : ""}`}>
       {/* Ambient Light */}
       <ambientLight intensity={10} />
 
