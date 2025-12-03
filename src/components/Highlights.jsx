@@ -10,7 +10,7 @@ const Highlights = () => {
   }, [])
 
   return (
-    <section id="highlights" className="w-screen h-[110%] sm:py-32! py-20! sm:px-20! px-5! bg-zinc">
+    <section id="highlights" className="w-full min-h-screen sm:py-32! py-20! sm:px-20! px-5! overflow-hidden bg-zinc">
       <div className="mb-12! w-full lg:flex items-center justify-between">
         <h1 id="title" className="section-heading">
           Get the highlights
