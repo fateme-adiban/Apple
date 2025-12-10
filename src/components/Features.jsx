@@ -10,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger)
 const Features = () => {
   const videoRef = useRef()
   useGSAP(() => {
+    if (window.innerWidth < 768) return
+
     gsap.to("#exploreVideo", {
       scrollTrigger: {
         trigger: "#exploreVideo",
@@ -22,17 +24,14 @@ const Features = () => {
     })
     animateWithGsap("#features_title", { y: 0, opacity: 1 })
 
-    animateWithGsap(".g_grow", { scale: 1, opacity: 1, ease: "power1" }, { scrub: 1.5 })
+    animateWithGsap(".g_grow", { scale: 1, opacity: 1, ease: "power1" }, { scrub: 5.5 })
     animateWithGsap(".g_text", { y: 0, opacity: 1, ease: "power2.inOut", duration: 1 })
-
-    ScrollTrigger.refresh()
-    window.addEventListener("load", () => ScrollTrigger.refresh())
   }, [])
 
   return (
     <section className="h-full sm:py-32! py-20! sm:px-20! px-5! bg-zinc relative overflow-hidden">
       <div className="mb-12 w-full">
-        <h1 id="features_title" className="section-heading">
+        <h1 id="features_title" className="section-heading md:translate-y-2 md:opacity-0">
           Explore the full story
         </h1>
       </div>
@@ -53,24 +52,24 @@ const Features = () => {
           <div className="flex flex-col w-full relative sm:mt-5!">
             <div className="feature-video-container">
               <div className="overflow-hidden flex-1 h-[50vh]">
-                <img src={explore1Img} alt="titanium" className="feature-video g_grow" />
+                <img src={explore1Img} alt="titanium" className="feature-video g_grow md:opacity-0 md:scale-150" />
               </div>
 
               <div className="overflow-hidden flex-1 h-[50vh]">
-                <img src={explore2Img} alt="titanium 2" className="feature-video g_grow" />
+                <img src={explore2Img} alt="titanium 2" className="feature-video g_grow md:opacity-0 md:scale-150" />
               </div>
             </div>
 
             <div className="feature-text-container">
               <div className="flex-1 flex-center">
-                <p className="feature-text g_text">
+                <p className="feature-text g_text md:opacity-0 md:translate-y-[100px]">
                   iPhone 15 Pro is <span className="text-white">the first iPhone to feature an aerospace grade titanium design </span>
                   using the same alloy that spacecrafts use for missions to Mars.
                 </p>
               </div>
 
               <div className="flex-1 flex-center">
-                <p className="feature-text g_text">
+                <p className="feature-text g_text md:opacity-0 md:translate-y-[100px]">
                   Titanium has one of the best strength to weight ratios of any metal, making these our <span className="text-white">lightest Pro models ever. </span>
                   you'll notice the difference the moment you pick one up.
                 </p>
