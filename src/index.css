@@ -16,6 +16,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --vh: 1vh;
+}
+
+html,
+body {
+  height: calc(var(--vh) * 100);
+}
+
 html,
 body {
   color: white;
